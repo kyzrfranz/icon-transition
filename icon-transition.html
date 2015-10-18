@@ -32,11 +32,18 @@ In the above example, we have two `<icon-transition>` icons whose transitions ar
 @contributors Tom Wiltzius, Addy Osmani, Nicholas Albion
 -->
 
-<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-behaviors/paper-inky-focus-behavior.html">
 
 <dom-module id="icon-transition">
     <link rel="stylesheet" href="icon-transition.css">
     <template>
+        <style>
+            :host #ink {
+                color: var(--paper-icon-button-ink-color, --primary-text-color);
+                opacity: 0.6;
+            }
+        </style>
         <svg id="svg" viewbox="0 0 24 24" stroke$="{{color}}">
             <g transform="translate(12, 12)">
                 <line x1="-1" y1="0" x2="1" y2="0"></line>
@@ -61,6 +68,9 @@ In the above example, we have two `<icon-transition>` icons whose transitions ar
                     observer: 'iconChanged'
                 }
             },
+            behaviors: [
+                Polymer.PaperInkyFocusBehavior
+            ],
 
             iconChanged: function() {
                 this._rotate += 180;

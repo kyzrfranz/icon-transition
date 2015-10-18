@@ -8,16 +8,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 icon-transition {
   display: inline-block;
+  position: relative;
+  box-sizing: content-box;
+  vertical-align: middle;
   width: 24px;
   height: 24px;
-  position: relative;
   line-height: 0;
 }
 
 svg {
-  width: 100%;
-  height: 100%;
-
   -webkit-transition: -webkit-transform 0.5s;
   -moz-transition: -moz-transform 0.5s;
   -o-transition: -o-transform 0.5s;
